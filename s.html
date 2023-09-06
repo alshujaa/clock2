@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>الساعة الرقمية</title>
+    <script>
+        function displayTime() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+
+            // إضافة صفر إلى الأرقام إذا كانت أقل من 10
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            var time = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("clock").innerHTML = time;
+        }
+
+        // تحديث الساعة كل ثانية
+        setInterval(displayTime, 1000);
+    </script>
+</head>
+
+<body>
+    <div id="clock"></div>
+</body>
+
+</html>
